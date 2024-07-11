@@ -27,7 +27,7 @@ bool collision_player_car(player *t_player, car *t_car) {
 
 
 // プレイヤーとゴールのあたり判定
-bool collision_player_udonbox(player *t_player) {
+bool collision_player_goalbox(player *t_player) {
 	// ゴールの座標範囲
 	float goal_right = 850.0f;
 	float goal_down = -3400.0f;

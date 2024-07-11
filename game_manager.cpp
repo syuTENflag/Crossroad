@@ -139,7 +139,7 @@ void game_manager::update() {
         // プレイ中の場合
         else {
             // プレイヤーとゴールのあたり判定
-            if (collision_player_udonbox(&obj_player)) {
+            if (collision_player_goalbox(&obj_player)) {
                 game_clear = true;
             }
             // プレイヤーと車たちのあたり判定

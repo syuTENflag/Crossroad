@@ -22,15 +22,15 @@ douro::douro() {
 	MV1SetPosition(model_handle, model_position);	// 3Dモデルの3D空間への配置
 
 
-	/* うどん屋 */
-	model_handle_udonbox = MV1LoadModel("./resorces/udon_box.mv1");		// 3Dモデルの読み込み
-	MV1SetScale(model_handle_udonbox, VGet(3.0f, 3.0f, 3.0f));			// 3Dモデルの拡大縮小
-	MaterialNum = MV1GetMaterialNum(model_handle_udonbox);				// 3Dモデルの輪郭線の修正
+	/* ゴール */
+	model_handle_goalbox = MV1LoadModel("./resorces/goal_box.mv1");		// 3Dモデルの読み込み
+	MV1SetScale(model_handle_goalbox, VGet(3.0f, 3.0f, 3.0f));			// 3Dモデルの拡大縮小
+	MaterialNum = MV1GetMaterialNum(model_handle_goalbox);				// 3Dモデルの輪郭線の修正
 	for (int i = 0; i < MaterialNum; i++) {
-		float dotwidth = MV1GetMaterialOutLineDotWidth(model_handle_udonbox, i);	// マテリアルの輪郭線の太さを取得  
-		MV1SetMaterialOutLineDotWidth(model_handle_udonbox, i, dotwidth / 50.0f);	// マテリアルの輪郭線の太さを拡大した分小さくする  
+		float dotwidth = MV1GetMaterialOutLineDotWidth(model_handle_goalbox, i);	// マテリアルの輪郭線の太さを取得  
+		MV1SetMaterialOutLineDotWidth(model_handle_goalbox, i, dotwidth / 50.0f);	// マテリアルの輪郭線の太さを拡大した分小さくする  
 	}
-	MV1SetPosition(model_handle_udonbox, VGet(2000.0f, -50.0f, -4000.0f));			// 3Dモデルの3D空間への配置
+	MV1SetPosition(model_handle_goalbox, VGet(2000.0f, -50.0f, -4000.0f));			// 3Dモデルの3D空間への配置
 }
 
 void douro::update() {
@@ -38,7 +38,7 @@ void douro::update() {
 
 void douro::draw() {
 	MV1DrawModel(model_handle);				// 道路
-	MV1DrawModel(model_handle_udonbox);		// ゴール
+	MV1DrawModel(model_handle_goalbox);		// ゴール
 
 	/* 地面 */
 	float pos_y = -350.0f;

@@ -16,7 +16,7 @@ private:
 
 	int model_handle;			// 3Dモデルのハンドル
 
-	int model_handle_udonbox;	// うどん屋の3Dモデルハンドル
+	int model_handle_goalbox;	// うどん屋の3Dモデルハンドル
 
 
 public:
